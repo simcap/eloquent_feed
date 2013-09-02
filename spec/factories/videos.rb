@@ -2,7 +2,8 @@
 
 FactoryGirl.define do
   factory :video do
-    title "MyString"
-    url "MyString"
+    title "A titorial video"
+    url "http://myvideo.com"
+    description "Nice tutorial"
   end
 end
