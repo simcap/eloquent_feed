@@ -1,0 +1,9 @@
+Bienvenue #{@user.email}
+
+%h2 #{@user.company.name} has #{@user.company.casts.count} casts
+
+- @user.company.casts.each do |cast|
+  .large-4.columns
+    .flex-video.vimeo.widescreen
+      %iframe{:src => cast.video.url, :color => "ffffff", :width => "335", :height => "188", :frameborder => "0"}
+      %p #{cast.video.title}
