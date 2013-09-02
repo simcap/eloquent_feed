@@ -1,4 +1,8 @@
-= semantic_form_for :login, url: login_path do |f|
-  = f.input :email
-  = f.input :password, as: :password
-  = f.action :submit, label: "Go"
+= simple_form_for :login, url: login_path do |f|
+  .row
+    = f.input :email, wrapper_html: {class: 'small-4 columns'}
+  .row
+    = f.input :password, as: :password, wrapper_html: {class: 'small-4 columns'}
+  .row
+    = f.submit "Go!", class: 'button round'
+
