@@ -1,18 +1,5 @@
-%nav.top-bar
-  %ul.title-area
-    %li.name
-      %h1
-        - if current_user
-          %a #{current_user.company.name} Casts
-        - else
-          %a Eloquent Feed
-  %section.top-bar-section
-    %ul.right
-      - if current_user
-        %li
-          %a=current_user.email
-        %li
-          = link_to "Logout", logout_path
-      - else
-        %li
-          = link_to "Login", login_path
+.header.hide-for-small
+  .row
+    .large-7.columns.logo
+      %h2
+        %a Eloquent Feed

@@ -1,11 +1,16 @@
 .landing-background
   .row
-    .large-8.columns
-      %h2
-        Veille technologique et formations pour vos équipes
-      %h5
-        Productivité, TDD, Pair programming, ...
+    .large-6.columns
+      %h3
+        Pas le temps de lire les classiques?
+      %h3
+        On les a découpés pour vous en vidéo!
       %button.round Start
+    .large-2.columns
+      #featured{"data-orbit" => ""}
+        = image_tag 'rtp.jpg', size: "165x225"
+        = image_tag 'effective-java.jpg', size: "165x225"
+    .large-4.columns
 
 .row
   .large-4.columns
