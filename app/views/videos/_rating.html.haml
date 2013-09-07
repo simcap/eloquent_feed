@@ -1,0 +1,8 @@
+.rating
+  - rating.times do
+    %span
+      &#9733;
+  - (5 - rating).times do
+    %span
+      &#9734;
+  = "(#{count} votes)"

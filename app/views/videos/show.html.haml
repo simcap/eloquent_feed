@@ -12,7 +12,6 @@
       - @video.comments.each do |comment|
         %li=comment.text
 .row
+  = render partial: 'videos/rating', locals: { rating: @video.average_rating, count: @video.ratings_count }
   = "Niveau: #{@video.level_as_word}"
   = "Durée: #{distance_of_time_in_words(@video.duration)}"
-  = "Score: #{@video.average_rating}"
-  = "Votes: #{@video.ratings_count}"
