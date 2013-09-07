@@ -6,6 +6,7 @@ FactoryGirl.define do
     url "http://tutorial-java.com"
     description "This is a tutorial on Java"
     level 1
+    duration 160
     ratings_count 10
     ratings_sum 30
   end

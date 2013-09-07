@@ -4,6 +4,13 @@
   .large-8.columns
     .flex-video.vimeo.widescreen
       %iframe{:src => @video.url, :color => "ffffff", :width => "168", :height => "94", :frameborder => "0"}
+  .large-4.columns.comments
+    = simple_form_for [@video, Comment.new] do |f|
+      = f.input :text, label: "Ajouter un commentaire"
+      = f.submit "Ajouter"
+    %ul
+      - @video.comments.each do |comment|
+        %li=comment.text
 .row
   = "Niveau: #{@video.level_as_word}"
   = "Durée: #{distance_of_time_in_words(@video.duration)}"

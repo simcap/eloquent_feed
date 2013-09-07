@@ -3,6 +3,8 @@
 class Video < ActiveRecord::Base
   attr_accessible :description, :level, :duration, :ratings_count, :ratings_sum, :title, :url
 
+  has_many :comments
+
   def average_rating
     (ratings_sum.to_f / ratings_count.to_f).round
   end
