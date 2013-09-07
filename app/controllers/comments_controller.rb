@@ -5,10 +5,11 @@ class CommentsController < ApplicationController
     video = Video.find(params[:video_id])
     @comment = video.comments.build(params[:comment])
     @comment.user = current_user
-    if @comment.save
-      redirect_to video
-    else
-      raise
+
+    respond_to do |format|
+      if @comment.save
+        format.js {}
+      end
     end
   end
 

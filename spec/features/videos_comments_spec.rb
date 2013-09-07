@@ -16,7 +16,7 @@ feature "Comments on videos" do
 
     visit video_path(video)
 
-    within ".comments" do
+    within "#comments" do
       page.should have_content "C'est mon commentaire pertinent"
     end
   end
