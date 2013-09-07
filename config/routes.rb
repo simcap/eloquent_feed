@@ -1,5 +1,9 @@
 EloquentFeed::Application.routes.draw do
+  get "videos/show"
+
   root to: 'landing#show'
+
+  resources :videos, only: [:show]
 
   get "home" => "home#show", as: "home"
 

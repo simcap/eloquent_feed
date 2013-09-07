@@ -1,0 +1,11 @@
+%h4
+  = @video.title
+.row
+  .large-8.columns
+    .flex-video.vimeo.widescreen
+      %iframe{:src => @video.url, :color => "ffffff", :width => "168", :height => "94", :frameborder => "0"}
+.row
+  = "Niveau: #{@video.level_as_word}"
+  = "Durée: #{distance_of_time_in_words(@video.duration)}"
+  = "Score: #{@video.average_rating}"
+  = "Votes: #{@video.ratings_count}"

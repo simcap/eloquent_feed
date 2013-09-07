@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130907121732) do
+ActiveRecord::Schema.define(:version => 20130907131721) do
 
   create_table "users", :force => true do |t|
     t.datetime "created_at",                        :null => false
@@ -24,5 +24,17 @@ ActiveRecord::Schema.define(:version => 20130907121732) do
 
   add_index "users", ["email"], :name => "index_users_on_email"
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+
+  create_table "videos", :force => true do |t|
+    t.string   "title",                        :null => false
+    t.string   "url",                          :null => false
+    t.text     "description",                  :null => false
+    t.integer  "level",                        :null => false
+    t.integer  "duration",      :default => 0, :null => false
+    t.integer  "ratings_count", :default => 0, :null => false
+    t.integer  "ratings_sum",   :default => 0, :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
 
 end
