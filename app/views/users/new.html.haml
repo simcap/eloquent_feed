@@ -1,0 +1,6 @@
+#clearance.sign-up
+  %h2 Sign up
+  = simple_form_for @user do |f|
+    = render partial: '/users/form', object: f
+    = f.submit
+    = link_to t('.sign_in'), sign_in_path

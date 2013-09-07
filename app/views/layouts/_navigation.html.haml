@@ -1,5 +1,11 @@
 .header.hide-for-small
   .row
-    .large-7.columns.logo
+    .large-8.columns.logo
       %h2
         %a Eloquent Feed
+    .large-4.columns
+      - if signed_in?
+        = current_user.email
+        = link_to t('.sign_out'), sign_out_path, :method => :delete
+      - else
+        = link_to t('.sign_in'), sign_in_path

@@ -6,6 +6,9 @@ gem 'pg'
 
 gem 'simple_form'
 
+gem 'clearance'
+
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

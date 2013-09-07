@@ -1,0 +1,7 @@
+- @current.casts.each do |cast|
+  .row
+    .large-4.columns
+      .flex-video.vimeo.widescreen
+        %iframe{:src => cast.video.url, :color => "ffffff", :width => "168", :height => "94", :frameborder => "0"}
+    .large-8.columns
+      %p #{cast.video.description}

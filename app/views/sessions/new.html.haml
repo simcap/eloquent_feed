@@ -1,8 +1,3 @@
-= simple_form_for :login, url: login_path do |f|
-  .row
-    = f.input :email, wrapper_html: {class: 'small-4 columns'}
-  .row
-    = f.input :password, as: :password, wrapper_html: {class: 'small-4 columns'}
-  .row
-    = f.submit "Go!", class: 'button round'
-
+#clearance.sign-in
+  %h2= t '.title'
+  = render partial: '/sessions/form'

@@ -1,10 +1,6 @@
 EloquentFeed::Application.routes.draw do
   root to: 'landing#show'
 
-  get "login" => "sessions#new", as: "login"
-  post "login" => "sessions#login", as: "login"
-  get "logout" => "sessions#destroy", as: "logout"
-
   get "home" => "home#show", as: "home"
 
   # The priority is based upon order of creation:

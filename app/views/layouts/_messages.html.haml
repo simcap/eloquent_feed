@@ -1,0 +1,8 @@
+- [:notice, :alert].each do |level|
+  - if (message = flash[level]).present?
+    - message_class = "alert #{flash_class(level)}"
+    - if message.is_a?(String)
+      = content_tag :div, message, :class => message_class
+    - if message.is_a?(Array)
+      - message.each do |m|
+        = content_tag :div, m, :class => message_class
