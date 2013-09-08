@@ -1,0 +1,6 @@
+.small-6.columns
+  = render partial: 'videos/rating', locals: { rating: video.average_rating, count: video.ratings_count }
+.small-3.columns
+  %span.radius.secondary.label= video.level_as_word
+.small-3.columns
+  %span.radius.secondary.label= distance_of_time_in_words(video.duration)

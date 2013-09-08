@@ -1,17 +1,26 @@
-%h4
-  = @video.title
 .row
-  .large-8.columns
-    .flex-video.vimeo.widescreen
-      %iframe{:src => @video.url, :color => "ffffff", :width => "168", :height => "94", :frameborder => "0"}
-  .large-4.columns
-    = simple_form_for [@video, Comment.new], remote: true do |f|
-      = f.input :text, label: "Ajouter un commentaire"
-      = f.submit "Ajouter"
-    %ul#comments
-      - @video.comments.each do |comment|
-        %li=comment.text
-.row
-  = render partial: 'videos/rating', locals: { rating: @video.average_rating, count: @video.ratings_count }
-  = "Niveau: #{@video.level_as_word}"
-  = "Durée: #{distance_of_time_in_words(@video.duration)}"
+  %h4.subheader
+    = @video.title
+  .small-8.columns
+    .row
+      .flex-video.vimeo.widescreen
+        %iframe{:src => @video.url, :color => "ffffff", :width => "168", :height => "94", :frameborder => "0"}
+    .row
+      = render partial: 'videos/legend', locals: {video: @video}
+    .row
+      .small-12.columns
+        %p=@video.description
+  .small-4.columns
+    .row
+      .small-12.columns
+        = simple_form_for [@video, Comment.new], remote: true do |f|
+          = f.input :text, label: false, placeholder: "Commentez cette vidéo..."
+          = f.button :submit, "Ajouter", class: 'tiny right'
+    .row
+      .small-12.columns
+        .panel#comments
+          - @video.comments.each do |comment|
+            %blockquote
+              =comment.text
+              %cite
+                =comment.user.email

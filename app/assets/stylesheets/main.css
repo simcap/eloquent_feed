@@ -4,10 +4,17 @@ nav {
   margin-bottom: 3rem;
 }
 
+.shadowing {
+  -webkit-box-shadow: 5px 5px 5px #666666;
+     -moz-box-shadow: 5px 5px 5px #666666;
+          box-shadow: 5px 5px 5px #666666;
+}
+
 .header {
     background: none repeat scroll 0 0 #e0615e;
     height: 6.5em;
     margin-top: 0;
+    margin-bottom: 2em;
     padding-top: 1em;
 }
 
@@ -31,7 +38,7 @@ nav {
 }
 
 .rating {
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 
