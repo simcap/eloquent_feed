@@ -4,12 +4,6 @@ nav {
   margin-bottom: 3rem;
 }
 
-.shadowing {
-  -webkit-box-shadow: 5px 5px 5px #666666;
-     -moz-box-shadow: 5px 5px 5px #666666;
-          box-shadow: 5px 5px 5px #666666;
-}
-
 .header {
     background: none repeat scroll 0 0 #e0615e;
     height: 6.5em;
@@ -41,14 +35,19 @@ nav {
   font-size: 1.2em;
 }
 
-.landing-background {
-  margin-top: 2em;
-  padding: 2em 0 2em 0;
-  background-image: url('wavegrid.png');
+.photo img {
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 3px 3px 4px #000000;
+    margin-top: 0.2em;
+    width: 100px;
 }
 
-.landing-background h3 {
-  font-family: "Open Sans",sans-serif;
-  font-weight: normal;
-  line-height: 1.5em;
+.member {
+  margin-bottom: 1.5em;
+}
+
+.landing-background {
+  margin: 2em 0em;
+  padding: 2em 0 2em 0;
+  background-image: url('wavegrid.png');
 }
