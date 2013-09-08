@@ -1,17 +1,14 @@
 - Video.all.each do |video|
   .row
-    .large-6.columns
+    .small-12.columns
       %h4
         = link_to video.title, video_path(video)
-    .large-6.columns
-      %h4
-        = video.level_as_word
-        = video.average_rating
-        = video.ratings_count
-        = distance_of_time_in_words(video.duration)
   .row
-    .large-4.columns
+    .small-4.columns
       .flex-video.vimeo.widescreen
         %iframe{:src => video.url, :color => "ffffff", :width => "168", :height => "94", :frameborder => "0"}
-    .large-8.columns
+    .small-8.columns
       %p #{video.description}
+  .row
+    .small-8.columns.small-offset-4
+      = render partial: 'videos/legend', locals: {video: video}

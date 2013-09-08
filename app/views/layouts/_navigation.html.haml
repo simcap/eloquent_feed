@@ -4,8 +4,9 @@
       %h2
         %a Eloquent Feed
     .large-4.columns
-      - if signed_in?
-        = current_user.email
-        = link_to t('.sign_out'), sign_out_path, :method => :delete
-      - else
-        = link_to t('.sign_in'), sign_in_path
+      %ul.inline-list
+        %li= link_to "Videos", home_path
+        - if signed_in?
+          %li= link_to t('.sign_out'), sign_out_path, :method => :delete
+        - else
+          %li= link_to t('.sign_in'), sign_in_path
