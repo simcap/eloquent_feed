@@ -20,7 +20,4 @@
       .small-12.columns
         .panel#comments
           - @video.comments.each do |comment|
-            %blockquote
-              =comment.text
-              %cite
-                =comment.user.email
+            = render partial: 'comments/comment', object: comment

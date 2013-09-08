@@ -1,16 +1,19 @@
 EloquentFeed::Application.routes.draw do
-  get "videos/show"
+
+  constraints Clearance::Constraints::SignedIn.new do
+    root to: 'home#show'
+  end
+
+  root to: 'landing#show'
 
   get "team" => 'landing#team'
   get "members" => 'landing#members'
-
-  root to: 'landing#show'
+  get "home" => "home#show"
 
   resources :videos, only: [:show] do
     resources :comments, only: [:create]
   end
 
-  get "home" => "home#show", as: "home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

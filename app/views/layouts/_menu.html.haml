@@ -1,0 +1,11 @@
+.row
+  .small-10.columns
+    %h1
+      Eloquent Feed
+  .small-2.columns.menu
+    %ul.inline-list
+      - if signed_in?
+        %li=link_to "Videos", home_path
+        %li= link_to "Logout", sign_out_path, :method => :delete, class: "button tiny round"
+      - else
+        %li= link_to "Login", sign_in_path, class: "button tiny round"
