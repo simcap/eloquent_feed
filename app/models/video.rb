@@ -6,7 +6,11 @@ class Video < ActiveRecord::Base
   has_many :comments
 
   def average_rating
-    (ratings_sum.to_f / ratings_count.to_f).round
+    if (ratings_count == 0 || ratings_count.nil?)
+      0
+    else
+      (ratings_sum.to_f / ratings_count.to_f).round
+    end
   end
 
   def level_as_word

@@ -6,6 +6,12 @@ describe Video do
 
   it "has an average rating" do
     Video.new(
+      ratings_count: 0, ratings_sum: 12
+    ).average_rating.should == 0
+    Video.new(
+      ratings_count: nil, ratings_sum: 0
+    ).average_rating.should == 0
+    Video.new(
       ratings_count: 4, ratings_sum: 12
     ).average_rating.should == 3
     Video.new(
