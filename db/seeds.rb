@@ -4,7 +4,7 @@ if Rails.env.production?
   video_1 = Video.create(title: "Refactoring avec Compose Method", duration: 60, ratings_count: 0, ratings_sum: 0, level: 1, url: "http://player.vimeo.com/video/74014379", description: "Tiré du livre Refactoring to Patterns de Joshua Kerievsky voici un refactoring introduisant une simplification. Typiquement à utiliser lorsque le contenu d'une methode n'est pas rapidement compréhensible. Ici l'exemple est la simplification à la lecture d'un simple algorithme.")
 
   simon = User.new
-  simon.email = "simon@mailup.net"
+  simon.email = "simon@mail.net"
   simon.encrypted_password = "$2a$10$IGdXaSQ6ogdGcLrRoPOvwed.T3ckBDrJrlO8aJKB7cqmglL1LplGi"
   simon.save!
 else
